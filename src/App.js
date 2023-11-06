@@ -43,7 +43,8 @@ function App() {
             </Col>
             <Col xs='12' sm='6'>
               <Form.Control 
-                as="textarea" 
+                as="textarea"
+                id='textarea-translated'
                 rows={3}
                 placeholder='Testo tradotto'
                 readOnly />

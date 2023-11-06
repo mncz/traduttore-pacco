@@ -39,3 +39,12 @@ code {
 textarea {
   resize: none !important;
 }
+
+#textarea-translated {
+  background-color: #5184d2;
+  border-color: #4176c6;
+}
+
+#textarea-translated::placeholder {
+  color: white;
+}

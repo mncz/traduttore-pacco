@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
+import { ReactComponent as GithubLogo } from '../assets/github.svg'
 
 function TopBar() {
     return (
@@ -11,7 +12,12 @@ function TopBar() {
             </Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className='justify-content-end'>
-                <Navbar.Text>Creato da mncz</Navbar.Text>
+                <Navbar.Text>
+                    <a href='https://github.com/mncz' className='text-muted text-decoration-none'>
+                        mncz
+                        <GithubLogo className='ms-1' fill='currentColor' width={ 16 }/>
+                    </a>
+                </Navbar.Text>
             </Navbar.Collapse>
         </Container>
       </Navbar>

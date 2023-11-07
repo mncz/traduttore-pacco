@@ -29,12 +29,16 @@
       "code": "eu"
     },
     {
+      "language": "Bengalese",
+      "code": "bn"
+    },
+    {
       "language": "Bielorusso",
       "code": "be"
     },
     {
-      "language": "Bengalese",
-      "code": "bn"
+      "language": "Birmano",
+      "code": "my"
     },
     {
       "language": "Bosniaco",
@@ -53,6 +57,18 @@
       "code": "ceb"
     },
     {
+      "language": "Ceco",
+      "code": "cs"
+    },
+    {
+      "language": "Chichewa",
+      "code": "ny"
+    },
+    {
+      "language": "Chirghiso",
+      "code": "ky"
+    },
+    {
       "language": "Cinese (semplificato)",
       "code": "zh-CN"
     },
@@ -61,28 +77,32 @@
       "code": "zh-TW"
     },
     {
+      "language": "Coreano",
+      "code": "ko"
+    },
+    {
       "language": "Corso",
       "code": "co"
+    },
+    {
+      "language": "Creolo haitiano",
+      "code": "ht"
     },
     {
       "language": "Croato",
       "code": "hr"
     },
     {
-      "language": "Ceco",
-      "code": "cs"
+      "language": "Curdo",
+      "code": "ku"
     },
     {
       "language": "Danese",
       "code": "da"
     },
     {
-      "language": "Olandese",
-      "code": "nl"
-    },
-    {
-      "language": "Inglese",
-      "code": "en"
+      "language": "Ebraico",
+      "code": "iw"
     },
     {
       "language": "Esperanto",
@@ -91,6 +111,10 @@
     {
       "language": "Estone",
       "code": "et"
+    },
+    {
+      "language": "Filippino",
+      "code": "tl"
     },
     {
       "language": "Finlandese",
@@ -105,72 +129,20 @@
       "code": "fy"
     },
     {
+      "language": "Gaelico scozzese",
+      "code": "gd"
+    },
+    {
       "language": "Galiziano",
       "code": "gl"
     },
     {
+      "language": "Gallese",
+      "code": "cy"
+    },
+    {
       "language": "Georgiano",
       "code": "ka"
-    },
-    {
-      "language": "Tedesco",
-      "code": "de"
-    },
-    {
-      "language": "Greco",
-      "code": "el"
-    },
-    {
-      "language": "Gujarati",
-      "code": "gu"
-    },
-    {
-      "language": "Creolo haitiano",
-      "code": "ht"
-    },
-    {
-      "language": "Hausa",
-      "code": "ha"
-    },
-    {
-      "language": "Hawaiano",
-      "code": "haw"
-    },
-    {
-      "language": "Ebraico",
-      "code": "iw"
-    },
-    {
-      "language": "Hindi",
-      "code": "hi"
-    },
-    {
-      "language": "Hmong",
-      "code": "hmn"
-    },
-    {
-      "language": "Ungherese",
-      "code": "hu"
-    },
-    {
-      "language": "Islandese",
-      "code": "is"
-    },
-    {
-      "language": "Igbo",
-      "code": "ig"
-    },
-    {
-      "language": "Indonesiano",
-      "code": "id"
-    },
-    {
-      "language": "Irlandese",
-      "code": "ga"
-    },
-    {
-      "language": "Italiano",
-      "code": "it"
     },
     {
       "language": "Giapponese",
@@ -181,32 +153,68 @@
       "code": "jw"
     },
     {
-      "language": "Kannada",
-      "code": "kn"
+      "language": "Greco",
+      "code": "el"
     },
     {
-      "language": "Kazako",
-      "code": "kk"
+      "language": "Gujarati",
+      "code": "gu"
     },
     {
-      "language": "Khmer",
-      "code": "km"
+      "language": "Hausa",
+      "code": "ha"
     },
     {
-      "language": "Coreano",
-      "code": "ko"
+      "language": "Hawaiano",
+      "code": "haw"
     },
     {
-      "language": "Curdo",
-      "code": "ku"
+      "language": "Hindi",
+      "code": "hi"
     },
     {
-      "language": "Chirghiso",
-      "code": "ky"
+      "language": "Hmong",
+      "code": "hmn"
     },
     {
-      "language": "Lao",
-      "code": "lo"
+      "language": "Igbo",
+      "code": "ig"
+    },
+    {
+      "language": "Indonesiano",
+      "code": "id"
+    },
+    {
+      "language": "Inglese",
+      "code": "en"
+    },
+    {
+      "language": "Irlandese",
+      "code": "ga"
+    },
+    {
+      "language": "Islandese",
+      "code": "is"
+    },
+    {
+      "language": "Italiano",
+      "code": "it"
+    },
+    {
+    "language": "Kannada",
+    "code": "kn"
+    },
+    {
+    "language": "Kazako",
+    "code": "kk"
+    },
+    {
+    "language": "Khmer",
+    "code": "km"
+    },
+    {
+    "language": "Lao",
+    "code": "lo"
     },
     {
       "language": "Latino",
@@ -229,16 +237,16 @@
       "code": "mk"
     },
     {
-      "language": "Malgascio",
-      "code": "mg"
+      "language": "Malayalam",
+      "code": "ml"
     },
     {
       "language": "Malese",
       "code": "ms"
     },
     {
-      "language": "Malayalam",
-      "code": "ml"
+      "language": "Malgascio",
+      "code": "mg"
     },
     {
       "language": "Maltese",
@@ -257,10 +265,6 @@
       "code": "mn"
     },
     {
-      "language": "Birmano",
-      "code": "my"
-    },
-    {
       "language": "Nepalese",
       "code": "ne"
     },
@@ -269,8 +273,8 @@
       "code": "no"
     },
     {
-      "language": "Chichewa",
-      "code": "ny"
+      "language": "Olandese",
+      "code": "nl"
     },
     {
       "language": "Pashto",
@@ -303,10 +307,6 @@
     {
       "language": "Samoano",
       "code": "sm"
-    },
-    {
-      "language": "Gaelico scozzese",
-      "code": "gd"
     },
     {
       "language": "Serbo",
@@ -349,16 +349,12 @@
       "code": "su"
     },
     {
-      "language": "Swahili",
-      "code": "sw"
-    },
-    {
       "language": "Svedese",
       "code": "sv"
     },
     {
-      "language": "Filippino",
-      "code": "tl"
+      "language": "Swahili",
+      "code": "sw"
     },
     {
       "language": "Tagico",
@@ -367,6 +363,10 @@
     {
       "language": "Tamil",
       "code": "ta"
+    },
+    {
+      "language": "Tedesco",
+      "code": "de"
     },
     {
       "language": "Telugu",
@@ -385,6 +385,10 @@
       "code": "uk"
     },
     {
+      "language": "Ungherese",
+      "code": "hu"
+    },
+    {
       "language": "Urdu",
       "code": "ur"
     },
@@ -395,10 +399,6 @@
     {
       "language": "Vietnamita",
       "code": "vi"
-    },
-    {
-      "language": "Gallese",
-      "code": "cy"
     },
     {
       "language": "Xhosa",

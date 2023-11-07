@@ -6,14 +6,15 @@ import TopBar from './Components/TopBar'
 import langs from './assets/lingue.json'
 import { useEffect } from 'react'
 
-const onceRender = async () => {
+const disabledSelected = async () => {
   const source = document.getElementById('selectSource')
   const target = document.getElementById('selectTarget')
+  console.log(target.childNodes)
 }
 
 function App() {
   useEffect(() => {
-    onceRender()
+    disabledSelected()
   }, [])
 
   return (

@@ -6,7 +6,7 @@ import TopBar from './Components/TopBar'
 import langs from './assets/lingue.json'
 import { useEffect } from 'react'
 
-const disabledSelected = async () => {
+const disabledSelected = () => {
   const source = document.getElementById('selectSource')
   const target = document.getElementById('selectTarget')
 
@@ -28,6 +28,27 @@ const disabledSelected = async () => {
   }
 }
 
+const swapLangs = () => {
+  const source = document.getElementById('selectSource')
+  const target = document.getElementById('selectTarget')
+  var temp = source.value
+  source.value = target.value
+  target.value = temp
+  disabledSelected()
+}
+
+const translateText = () => {
+  const selectTarget = document.getElementById('textarea-translated')
+  const dots = '....'
+  let i = 0
+
+  setInterval(() => {
+    selectTarget.placeholder = dots.substring(0, i % 4)
+    i += 1
+  }, 200)
+
+}
+
 function App() {
   useEffect(() => {
     disabledSelected()
@@ -41,7 +62,7 @@ function App() {
           <Row className='justify-content-center mb-3'>
             <Col xs='4' md='3' lg='2'>
               <SelectLang 
-                id='selectSource'
+                id={ 'selectSource' }
                 select={ 'it' }
                 options={ langs.text } />
             </Col>
@@ -52,12 +73,12 @@ function App() {
                   <Tooltip>Inverti lingue</Tooltip>
                 }
               >
-                <span id='swap'>🔄</span>
+                <span id='swap' onClick={ swapLangs }>🔄</span>
               </OverlayTrigger>
             </Col>
             <Col xs='4' md='3' lg='2'>
               <SelectLang
-                id='selectTarget'
+                id={ 'selectTarget' }
                 select={ 'en' }
                 options={ langs.text } />
             </Col>
@@ -68,6 +89,7 @@ function App() {
                 as="textarea" 
                 rows={ 3 } 
                 maxLength={ 50 }
+                onKeyUp={ translateText }
                 placeholder='Testo da tradurre...' />
             </Col>
             <Col xs='12' sm='6'>

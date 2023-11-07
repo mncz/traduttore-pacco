@@ -1,13 +1,10 @@
 import Form from 'react-bootstrap/Form'
 
-function renderOptions(props, select) {
-    var selected = true ? select === props.code : false
-
+function renderOptions(props) {
     return (
         <option 
             key={ props.code }
-            value={ props.code }
-            selected={ selected }>
+            value={ props.code }>
             { props.language }
         </option>
     )
@@ -16,8 +13,8 @@ function renderOptions(props, select) {
 function SelectLang({ id, select, options }) {
     return (
         <>
-            <Form.Select id={ id } size='lg'>
-                {options.map((option) => renderOptions(option, select))}
+            <Form.Select id={ id } defaultValue={select} size='lg'>
+                {options.map(renderOptions)}
             </Form.Select>
         </>
     )

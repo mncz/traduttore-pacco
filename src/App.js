@@ -9,7 +9,23 @@ import { useEffect } from 'react'
 const disabledSelected = async () => {
   const source = document.getElementById('selectSource')
   const target = document.getElementById('selectTarget')
-  console.log(target.childNodes)
+
+  for (let i = 0; i < source.options.length; i++) {
+    let sourceOpt = source.options[i]
+    let targetOpt = target.options[i]
+
+    if (sourceOpt.value === target.value) {
+      sourceOpt.disabled = true
+    } else if (sourceOpt.disabled) {
+      sourceOpt.disabled = false
+    }
+
+    if (targetOpt.value === source.value) {
+      targetOpt.disabled = true
+    } else if (targetOpt.disabled) {
+      targetOpt.disabled = false
+    }
+  }
 }
 
 function App() {
@@ -24,7 +40,10 @@ function App() {
         <Container>
           <Row className='justify-content-center mb-3'>
             <Col xs='4' md='3' lg='2'>
-              <SelectLang id='selectSource' select={ 'it' } options={ langs.text } />
+              <SelectLang 
+                id='selectSource'
+                select={ 'it' }
+                options={ langs.text } />
             </Col>
             <Col xs='auto' className='align-self-center'>
               <OverlayTrigger
@@ -37,7 +56,10 @@ function App() {
               </OverlayTrigger>
             </Col>
             <Col xs='4' md='3' lg='2'>
-              <SelectLang id='selectTarget' select={ 'en' } options={ langs.text } />
+              <SelectLang
+                id='selectTarget'
+                select={ 'en' }
+                options={ langs.text } />
             </Col>
           </Row>
           <Row className='g-3'>

@@ -1,57 +1,15 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Col, Container, Form, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { useEffect } from 'react'
 import SelectLang from './Components/SelectLang'
 import TopBar from './Components/TopBar'
 import langs from './assets/lingue.json'
-import { useEffect } from 'react'
-
-const disabledSelected = () => {
-  const source = document.getElementById('selectSource')
-  const target = document.getElementById('selectTarget')
-
-  for (let i = 0; i < source.options.length; i++) {
-    let sourceOpt = source.options[i]
-    let targetOpt = target.options[i]
-
-    if (sourceOpt.value === target.value) {
-      sourceOpt.disabled = true
-    } else if (sourceOpt.disabled) {
-      sourceOpt.disabled = false
-    }
-
-    if (targetOpt.value === source.value) {
-      targetOpt.disabled = true
-    } else if (targetOpt.disabled) {
-      targetOpt.disabled = false
-    }
-  }
-}
-
-const swapLangs = () => {
-  const source = document.getElementById('selectSource')
-  const target = document.getElementById('selectTarget')
-  var temp = source.value
-  source.value = target.value
-  target.value = temp
-  disabledSelected()
-}
-
-const translateText = () => {
-  const selectTarget = document.getElementById('textarea-translated')
-  const dots = '....'
-  let i = 0
-
-  setInterval(() => {
-    selectTarget.placeholder = dots.substring(0, i % 4)
-    i += 1
-  }, 200)
-
-}
+import * as fn from './functions'
 
 function App() {
   useEffect(() => {
-    disabledSelected()
+    fn.disableOptions()
   }, [])
 
   return (
@@ -62,40 +20,38 @@ function App() {
           <Row className='justify-content-center mb-3'>
             <Col xs='4' md='3' lg='2'>
               <SelectLang 
-                id={ 'selectSource' }
+                id={ 'langSource' }
                 select={ 'it' }
-                options={ langs.text } />
+                langs={ langs.text } />
             </Col>
             <Col xs='auto' className='align-self-center'>
               <OverlayTrigger
                 placement='top'
-                overlay={
-                  <Tooltip>Inverti lingue</Tooltip>
-                }
-              >
-                <span id='swap' onClick={ swapLangs }>🔄</span>
+                overlay={ <Tooltip>Inverti lingue</Tooltip> }>
+                <span id='swap' onClick={ fn.swapLangs }>🔄</span>
               </OverlayTrigger>
             </Col>
             <Col xs='4' md='3' lg='2'>
               <SelectLang
-                id={ 'selectTarget' }
+                id={ 'langTarget' }
                 select={ 'en' }
-                options={ langs.text } />
+                langs={ langs.text } />
             </Col>
           </Row>
           <Row className='g-3'>
             <Col xs='12' sm='6'>
               <Form.Control 
-                as="textarea" 
+                as='textarea'
+                id='textareaSource'
                 rows={ 3 } 
-                maxLength={ 50 }
-                onKeyUp={ translateText }
+                maxLength={ 100 }
+                onKeyUp={ fn.translateText }
                 placeholder='Testo da tradurre...' />
             </Col>
             <Col xs='12' sm='6'>
               <Form.Control 
-                as="textarea"
-                id='textarea-translated'
+                as='textarea'
+                id='textareaTarget'
                 rows={ 3 }
                 placeholder='Testo tradotto'
                 readOnly />
@@ -104,7 +60,7 @@ function App() {
         </Container>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

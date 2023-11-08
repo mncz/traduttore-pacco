@@ -1,5 +1,4 @@
 import Form from 'react-bootstrap/Form'
-import { useState } from 'react'
 
 function renderOptions(props) {
     return (
@@ -11,14 +10,11 @@ function renderOptions(props) {
     )
 }
 
-function SelectLang({ id, select, options }) {
-    const [selected, setSelected] = useState(options[0].code)
-
+function SelectLang({ id, select, langs }) {
+    
     const handleChange = (event) => {
-        const selectId = event.target.id === 'selectSource' ? 'selectTarget' : 'selectSource'
+        const selectId = event.target.id === 'langSource' ? 'langTarget' : 'langSource'
         const opts = document.getElementById(selectId).options
-        opts.value = selected
-        setSelected(event.target.value)
 
         for (let i = 0; i < opts.length; i++) {
             if (opts[i].value === event.target.value) {
@@ -31,8 +27,12 @@ function SelectLang({ id, select, options }) {
 
     return (
         <>
-            <Form.Select id={ id } onChange={ handleChange } defaultValue={select} size='lg'>
-                {options.map(renderOptions)}
+            <Form.Select 
+                id={ id }
+                defaultValue={ select }
+                size='lg'
+                onChange={ handleChange }>
+                { langs.map(renderOptions) }
             </Form.Select>
         </>
     )

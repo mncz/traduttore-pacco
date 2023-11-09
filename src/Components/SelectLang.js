@@ -1,4 +1,5 @@
 import Form from 'react-bootstrap/Form'
+import { translateText } from '../functions'
 
 function renderOptions(props) {
     return (
@@ -23,6 +24,8 @@ function SelectLang({ id, select, langs }) {
                 opts[i].disabled = false
             }
         }
+
+        translateText()
     }
 
     return (

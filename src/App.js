@@ -10,6 +10,13 @@ import * as fn from './functions'
 function App() {
   useEffect(() => {
     fn.disableOptions()
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        return false
+      }
+    })
   }, [])
 
   return (
@@ -22,7 +29,8 @@ function App() {
               <SelectLang 
                 id={ 'langSource' }
                 select={ 'it' }
-                langs={ langs.text } />
+                langs={ langs.text }
+                onChange={ fn.translateText } />
             </Col>
             <Col xs='auto' className='align-self-center'>
               <OverlayTrigger
@@ -35,7 +43,8 @@ function App() {
               <SelectLang
                 id={ 'langTarget' }
                 select={ 'en' }
-                langs={ langs.text } />
+                langs={ langs.text }
+                onChange={ fn.translateText } />
             </Col>
           </Row>
           <Row className='g-3'>
@@ -43,7 +52,7 @@ function App() {
               <Form.Control 
                 as='textarea'
                 id='textareaSource'
-                rows={ 3 } 
+                rows={ 3 }
                 maxLength={ 100 }
                 onKeyUp={ fn.translateText }
                 placeholder='Testo da tradurre...' />

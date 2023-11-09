@@ -5,7 +5,8 @@ function renderOptions(props) {
     return (
         <option 
             key={ props.code }
-            value={ props.code }>
+            value={ props.code }
+            data-value={ props.language }>
             { props.language }
         </option>
     )

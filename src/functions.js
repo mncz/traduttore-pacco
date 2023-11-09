@@ -1,4 +1,8 @@
+import langs from './assets/lingue.json'
+
 const URL = 'https://translation.googleapis.com/language/translate/v2?key='
+const LOADING_TEXT = 'Traduzione in corso...'
+const PLACEHOLDER = 'Testo tradotto'
 let TIMEOUT_ID = undefined
 
 const getForm = (a) => {
@@ -23,10 +27,18 @@ const disableOptions = () => {
 }
   
 const swapLangs = () => {
-  const [a, b] = getForm(['langSource', 'langTarget'])
-  let t = a.value
-  a.value = b.value
-  b.value = t
+  const [a, b] = getForm(['textareaSource', 'textareaTarget'])
+  const [al, bl] = getForm(['langSource', 'langTarget'])
+  let t = al.value
+  al.value = bl.value
+  bl.value = t
+
+  if (a.value !== '' && b.placeholder !== PLACEHOLDER) {
+    let temp = b.placeholder
+    b.placeholder = a.value
+    a.value = temp
+  }
+
   disableOptions()
   translateText()
 }
@@ -37,11 +49,11 @@ const translateText = async () => {
   let req = false
 
   if (a.value === '') {
-    b.placeholder = 'Testo tradotto'
+    b.placeholder = PLACEHOLDER
     return
   }
 
-  b.placeholder = 'Traduzione in corso...'
+  b.placeholder = LOADING_TEXT
 
   if (typeof TIMEOUT_ID !== 'undefined') {
     clearTimeout(TIMEOUT_ID)
@@ -66,7 +78,12 @@ const translateText = async () => {
     )
 
     const obj = await response.json()
-    b.placeholder = decodeHtml(obj.data.translations[0].translatedText)
+    const text = decodeHtml(obj.data.translations[0].translatedText)
+    const ac = langs.text.find(l => l.code === al.value).language
+    const bc = langs.text.find(l => l.code === bl.value).language
+    b.placeholder = text
+
+    console.log(`Traduzione effettuata: [in ${ac}] ${a.value} -> [a ${bc}] ${text}`)
   }
 }
 
